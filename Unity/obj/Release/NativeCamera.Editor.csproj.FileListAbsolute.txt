@@ -1,0 +1,3 @@
+D:\Programs\unity programs\Unity2019Personal\Upload Projects\CamScanner\obj\Release\NativeCamera.Editor.csprojResolveAssemblyReference.cache
+D:\Programs\unity programs\Unity2019Personal\Upload Projects\CamScanner\obj\Release\NativeCamera.Editor.dll
+D:\Programs\unity programs\Unity2019Personal\Upload Projects\CamScanner\obj\Release\NativeCamera.Editor.pdb
