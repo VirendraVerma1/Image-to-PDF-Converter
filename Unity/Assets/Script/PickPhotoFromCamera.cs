@@ -8,7 +8,7 @@ public class PickPhotoFromCamera : MonoBehaviour
 {
     
     private string imagesURL = "https://kreasarapps.000webhostapp.com/images/";
-    private string UploadUrl = "https://kreasarapps.000webhostapp.com/CamScanner/uploadpic.php";
+    private string UploadUrl = "http://kreasaard.atwebpages.com/DSM/uploadpic.php";
     private string MakePdfFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/makepdfpush.php";
     private string ChangeNameFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/chagefilename.php";
     private string CheckAndGetDownloadLinkFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/checkifpdfexist.php";
