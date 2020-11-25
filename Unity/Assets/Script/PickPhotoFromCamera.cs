@@ -6,15 +6,15 @@ using System;
 
 public class PickPhotoFromCamera : MonoBehaviour
 {
-    
-    private string imagesURL = "https://kreasarapps.000webhostapp.com/images/";
+
+    private string imagesURL = "http://kreasaard.atwebpages.com/DSM/upload/";
     private string UploadUrl = "http://kreasaard.atwebpages.com/DSM/uploadpic.php";
-    private string MakePdfFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/makepdfpush.php";
-    private string ChangeNameFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/chagefilename.php";
-    private string CheckAndGetDownloadLinkFromServerUrl = "https://kreasarapps.000webhostapp.com/CamScanner/checkifpdfexist.php";
-    private string GetAllImagesOfGroup = "https://kreasarapps.000webhostapp.com/CamScanner/getallphotos.php";
-    private string SetImageOrderOnServer = "https://kreasarapps.000webhostapp.com/CamScanner/setimageorderfromphone.php";
-    private string DeleteIamgeFromImageIdUrl = "https://kreasarapps.000webhostapp.com/CamScanner/ondeleteimagefromphone.php";
+    private string MakePdfFromServerUrl = "http://kreasaard.atwebpages.com/DSM/makepdfpush.php";
+    private string ChangeNameFromServerUrl = "http://kreasaard.atwebpages.com/DSM/chagefilename.php";
+    private string CheckAndGetDownloadLinkFromServerUrl = "http://kreasaard.atwebpages.com/DSM/checkifpdfexist.php";
+    private string GetAllImagesOfGroup = "http://kreasaard.atwebpages.com/DSM/getallphotos.php";
+    private string SetImageOrderOnServer = "http://kreasaard.atwebpages.com/DSM/setimageorderfromphone.php";
+    private string DeleteIamgeFromImageIdUrl = "http://kreasaard.atwebpages.com/DSM/ondeleteimagefromphone.php";
     private string RemoveImageFromServerURL = "";
 
 
@@ -99,9 +99,9 @@ public class PickPhotoFromCamera : MonoBehaviour
             for (int i = 0; i < items.Length - 1; i++)
             {
                 string imageid = GetDataValue(items[i], "ImageID:");
-                string photopath = GetDataValue(items[i], "PhotoPath:");
+                string photopath = GetDataValue(items[i], "FileName:");
 
-                string imageUrl = "https://kreasarapps.000webhostapp.com/CamScanner/Images/" + photopath;
+                string imageUrl = "http://kreasaard.atwebpages.com/DSM/upload/" + photopath;
 
                 GameObject go = Instantiate(ImageGO);
 
@@ -555,7 +555,7 @@ public class PickPhotoFromCamera : MonoBehaviour
             ResultText.text = "Error during upload: " + upload.text;
         }
 
-        if (upload.text.Contains("sucess"))
+        if (upload.text.Contains("success"))
         {
             //remove loading animation from that image
             //-------------------------------------------TODO

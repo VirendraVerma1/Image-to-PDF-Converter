@@ -191,7 +191,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 4ff1de61dbf43c943a91448119e4c113
+      Hash: 1ae7b0ac1aca42351042acda02f3849c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickPhotoFromCamera
@@ -257,7 +257,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: c0ddf217ec930932585a36a5ed4db619
+      Hash: 73f82bc9e2d891c7056f77a3787b8a76
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainController
@@ -1506,4 +1506,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Viru/Desktop/test1.apk
+  playerPath: C:/Users/Virendra/Desktop/DocumentScannerAndMaker.apk

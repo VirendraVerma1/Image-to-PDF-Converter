@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainController : MonoBehaviour
 {
-    private string CreateAccountUrl = "https://kreasarapps.000webhostapp.com/CamScanner/createaccount.php";
-    private string GetAllPdfUrl = "https://kreasarapps.000webhostapp.com/CamScanner/getmypdf.php";
-    private string DeleteEveryFileDetails = "https://kreasarapps.000webhostapp.com/CamScanner/onpdfdeletewithimagesfromphone.php";
+    private string CreateAccountUrl = "http://kreasaard.atwebpages.com/DSM/createaccount.php";
+    private string GetAllPdfUrl = "http://kreasaard.atwebpages.com/DSM/getmypdf.php";
+    private string DeleteEveryFileDetails = "http://kreasaard.atwebpages.com/DSM/onpdfdeletewithimagesfromphone.php";
 
     List<HomePageData> homepagedata = new List<HomePageData>();
     public GameObject HomePage;
@@ -99,7 +99,7 @@ public class MainController : MonoBehaviour
                 string groupid = GetDataValue(items[i], "GroupID:");
                 string pdfcode = GetDataValue(items[i], "PDFCode:");
 
-                string download = "https://kreasarapps.000webhostapp.com/CamScanner/Merged/" + userid + "/" + groupid + "/" + name + ".pdf";
+                string download = "http://kreasaard.atwebpages.com/DSM/Merged/" + userid + "/" + groupid + "/" + name + ".pdf";
 
                 homepagedata.Add(new HomePageData(userid, name, groupid, date, pdfcode, download));
 
