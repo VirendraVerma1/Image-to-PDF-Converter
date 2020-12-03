@@ -6,15 +6,15 @@ using System;
 
 public class PickPhotoFromCamera : MonoBehaviour
 {
-
-    private string imagesURL = "http://kreasaard.atwebpages.com/DSM/upload/";
-    private string UploadUrl = "http://kreasaard.atwebpages.com/DSM/uploadpic.php";
-    private string MakePdfFromServerUrl = "http://kreasaard.atwebpages.com/DSM/makepdfpush.php";
-    private string ChangeNameFromServerUrl = "http://kreasaard.atwebpages.com/DSM/chagefilename.php";
-    private string CheckAndGetDownloadLinkFromServerUrl = "http://kreasaard.atwebpages.com/DSM/checkifpdfexist.php";
-    private string GetAllImagesOfGroup = "http://kreasaard.atwebpages.com/DSM/getallphotos.php";
-    private string SetImageOrderOnServer = "http://kreasaard.atwebpages.com/DSM/setimageorderfromphone.php";
-    private string DeleteIamgeFromImageIdUrl = "http://kreasaard.atwebpages.com/DSM/ondeleteimagefromphone.php";
+    private string mainurl = "http://kreasaard.atwebpages.com/";
+    private string imagesURL = "https://datacontainernew.000webhostapp.com/DSM/upload/";
+    private string UploadUrl = "https://datacontainernew.000webhostapp.com/DSM/uploadpic.php";
+    private string MakePdfFromServerUrl = "https://datacontainernew.000webhostapp.com/DSM/makepdfpush.php";
+    private string ChangeNameFromServerUrl = "https://datacontainernew.000webhostapp.com/DSM/chagefilename.php";
+    private string CheckAndGetDownloadLinkFromServerUrl = "https://datacontainernew.000webhostapp.com/DSM/checkifpdfexist.php";
+    private string GetAllImagesOfGroup = "https://datacontainernew.000webhostapp.com/DSM/getallphotos.php";
+    private string SetImageOrderOnServer = "https://datacontainernew.000webhostapp.com/DSM/setimageorderfromphone.php";
+    private string DeleteIamgeFromImageIdUrl = "https://datacontainernew.000webhostapp.com/DSM/ondeleteimagefromphone.php";
     private string RemoveImageFromServerURL = "";
 
 
@@ -101,7 +101,7 @@ public class PickPhotoFromCamera : MonoBehaviour
                 string imageid = GetDataValue(items[i], "ImageID:");
                 string photopath = GetDataValue(items[i], "FileName:");
 
-                string imageUrl = "http://kreasaard.atwebpages.com/DSM/upload/" + photopath;
+                string imageUrl = "https://datacontainernew.000webhostapp.com/DSM/" + photopath;
 
                 GameObject go = Instantiate(ImageGO);
 

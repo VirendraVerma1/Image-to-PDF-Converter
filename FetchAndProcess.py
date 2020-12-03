@@ -14,17 +14,19 @@ from bs4 import BeautifulSoup
 
 yy=1
 while(yy>0):
-    r=requests.get("https://kreasarapps.000webhostapp.com/CamScanner/checkforpdfmaker.php");
-    print(r.text)
+    r=requests.get("https://datacontainernew.000webhostapp.com/DSM/checkforpdfmaker.php");
+    #print(r.text,"Text Got")
     try:
         s=r.text.split(";")
-        
+        print(s)
         imageFilename=[]
         pdfFilename=[]
         mergedFilename=[]
     
         idi=s[len(s)-2]
         groupidi=s[len(s)-3]
+        
+        print(idi,groupidi)
         
         filename=""
         FilePath="D:/ServerData/Images/"
@@ -49,7 +51,8 @@ while(yy>0):
     
         for i in range(0,len(s)-3):
             #----------------------------------downloading images
-            URL="https://kreasarapps.000webhostapp.com/CamScanner/Images/"+s[i]
+            URL="https://datacontainernew.000webhostapp.com/DSM/"+s[i]
+            print("URL Images",URL)
             fileNAAM=url_to_jpg(i,URL,FilePath)
             imageFilename.append(fileNAAM)
     
@@ -66,7 +69,7 @@ while(yy>0):
             pdfFilename.append(pdfname)
             convert_to_pdf(filename,pdfname)
     
-        # merge two pdf
+        # merge to pdf
         path="D:/ServerData/Pdf/"
         pdf_files=pdfFilename
         merger=PdfFileMerger()
@@ -79,7 +82,7 @@ while(yy>0):
         
         #-----------------------------send and change the pdf make values--------------
         
-        url="https://kreasarapps.000webhostapp.com/CamScanner/uploadpdf.php"
+        url="https://datacontainernew.000webhostapp.com/DSM/uploadpdf.php"
         filess={
             'theFile' : open('D:/ServerData/Pdf/MergedPdf/merged.pdf','rb')
         }
@@ -112,7 +115,8 @@ while(yy>0):
         
         
         print("All the files are removed")
+        time.sleep(4)
     except Exception:
         pass
     
-    time.sleep(4)
+    time.sleep(300)

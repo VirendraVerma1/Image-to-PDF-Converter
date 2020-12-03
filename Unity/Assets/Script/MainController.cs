@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainController : MonoBehaviour
 {
-    private string CreateAccountUrl = "http://kreasaard.atwebpages.com/DSM/createaccount.php";
-    private string GetAllPdfUrl = "http://kreasaard.atwebpages.com/DSM/getmypdf.php";
-    private string DeleteEveryFileDetails = "http://kreasaard.atwebpages.com/DSM/onpdfdeletewithimagesfromphone.php";
+    private string CreateAccountUrl = "https://datacontainernew.000webhostapp.com/DSM/createaccount.php";
+    private string GetAllPdfUrl = "https://datacontainernew.000webhostapp.com/DSM/getmypdf.php";
+    private string DeleteEveryFileDetails = "https://datacontainernew.000webhostapp.com/DSM/onpdfdeletewithimagesfromphone.php";
 
     List<HomePageData> homepagedata = new List<HomePageData>();
     public GameObject HomePage;
@@ -50,7 +50,7 @@ public class MainController : MonoBehaviour
         form1.AddField("name", name);
         WWW www = new WWW(CreateAccountUrl, form1);
         yield return www;
-
+        print(www.text);
         if (www.text.Contains("ID"))
         {
             saveload.accountID = GetDataValue(www.text, "ID:");
@@ -85,6 +85,7 @@ public class MainController : MonoBehaviour
         form1.AddField("id", saveload.accountID);
         WWW www = new WWW(GetAllPdfUrl, form1);
         yield return www;
+        print(www.text);
         if (www.text.Contains("ID"))
         {
             string itemsDataString = www.text;
@@ -99,7 +100,7 @@ public class MainController : MonoBehaviour
                 string groupid = GetDataValue(items[i], "GroupID:");
                 string pdfcode = GetDataValue(items[i], "PDFCode:");
 
-                string download = "http://kreasaard.atwebpages.com/DSM/Merged/" + userid + "/" + groupid + "/" + name + ".pdf";
+                string download = "https://datacontainernew.000webhostapp.com/" + userid + "/" + groupid + "/" + name + ".pdf";
 
                 homepagedata.Add(new HomePageData(userid, name, groupid, date, pdfcode, download));
 
