@@ -51,7 +51,7 @@ while(yy>0):
     
         for i in range(0,len(s)-3):
             #----------------------------------downloading images
-            URL="https://datacontainernew.000webhostapp.com/DSM/"+s[i]
+            URL="https://datacontainernew.000webhostapp.com/DSM/upload/"+s[i]
             print("URL Images",URL)
             fileNAAM=url_to_jpg(i,URL,FilePath)
             imageFilename.append(fileNAAM)
@@ -119,4 +119,4 @@ while(yy>0):
     except Exception:
         pass
     
-    time.sleep(300)
+    time.sleep(4)

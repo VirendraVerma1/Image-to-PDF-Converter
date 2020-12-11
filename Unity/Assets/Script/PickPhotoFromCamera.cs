@@ -101,7 +101,7 @@ public class PickPhotoFromCamera : MonoBehaviour
                 string imageid = GetDataValue(items[i], "ImageID:");
                 string photopath = GetDataValue(items[i], "FileName:");
 
-                string imageUrl = "https://datacontainernew.000webhostapp.com/DSM/" + photopath;
+                string imageUrl = "https://datacontainernew.000webhostapp.com/DSM/upload/" + photopath;
 
                 GameObject go = Instantiate(ImageGO);
 
