@@ -115,8 +115,8 @@ while(yy>0):
         
         
         print("All the files are removed")
-        time.sleep(4)
+        time.sleep(10)
     except Exception:
         pass
     
-    time.sleep(4)
+    time.sleep(10)
