@@ -10,6 +10,7 @@ public class MainController : MonoBehaviour
     private string CreateAccountUrl = "https://datacontainernew.000webhostapp.com/DSM/createaccount.php";
     private string GetAllPdfUrl = "https://datacontainernew.000webhostapp.com/DSM/getmypdf.php";
     private string DeleteEveryFileDetails = "https://datacontainernew.000webhostapp.com/DSM/onpdfdeletewithimagesfromphone.php";
+    private string AttachPDF = "https://datacontainernew.000webhostapp.com/DSM/onpdfdeletewithimagesfromphone.php";
 
     List<HomePageData> homepagedata = new List<HomePageData>();
     public GameObject HomePage;
@@ -69,6 +70,7 @@ public class MainController : MonoBehaviour
     public Transform PlaceContenthome;
 
     private string dowloadLink;
+    List<GameObject> optionBox = new List<GameObject>();
 
     void GetAllPdf()
     {
@@ -87,6 +89,7 @@ public class MainController : MonoBehaviour
         WWW www = new WWW(GetAllPdfUrl, form1);
         yield return www;
         print(www.text);
+        optionBox.Clear();
         if (www.text.Contains("ID"))
         {
             string itemsDataString = www.text;
@@ -111,25 +114,26 @@ public class MainController : MonoBehaviour
                 go.transform.Find("PdfName").GetComponent<Text>().text = name;
                 go.transform.Find("Detail").GetComponent<Text>().text = date;
                 go.transform.Find("Info").GetComponent<Text>().text = groupid;
+                go.transform.Find("MenuBar").transform.Find("ShareButton").GetComponent<Button>().onClick.AddListener(() => OnLinkPDFSharableButtonPressed(groupid));
                 go.transform.Find("MenuBar").transform.Find("ShareButton").GetComponent<Button>().onClick.AddListener(() => OnShareLinkButtonPressed(groupid));
                 go.transform.Find("MenuBar").transform.Find("DownloadButton").GetComponent<Button>().onClick.AddListener(() => OnDownloadButtonPressed(groupid));
                 go.transform.Find("MenuBar").transform.Find("DeleteButton").GetComponent<Button>().onClick.AddListener(() => OnDeleteButtonPressed(groupid));
                 go.GetComponent<Button>().onClick.AddListener(() => OpenPdfPages(groupid));
-
+                int n = i;
+                go.transform.Find("MenuButton").transform.GetComponent<Button>().onClick.AddListener(() => OnFileMenuButtonPressed(n));
+                optionBox.Add(go.transform.Find("MenuBar").gameObject);
                 go.transform.Find("MenuBar").gameObject.SetActive(false);
             }
         }
     }
 
-    //----------------------------------------------------------Ondelete button function
-    void OnFileMenuButtonPressed(string groupid)
+    //---------------------------------------------------------on menu open close
+    void OnFileMenuButtonPressed(int groupid)
     {
-        GameObject[] go = GameObject.FindGameObjectsWithTag("Box");
-        foreach (GameObject g in go)
-        {
-            //g.transform
-
-        }
+        if(optionBox[groupid].gameObject.active)
+            optionBox[groupid].gameObject.SetActive(false);
+        else
+            optionBox[groupid].gameObject.SetActive(true);
     }
 
     //----------------------------------------------------------Ondelete button function
@@ -167,18 +171,41 @@ public class MainController : MonoBehaviour
     {
         //fetch link from list
         string filename="";
+        string sharePdfKey = "";
         foreach (HomePageData g in homepagedata)
         {
             if (g.GroupId == groupid)
             {
                 dowloadLink = g.DownloadLink;
                 filename=g.FileName;
+                sharePdfKey = g.Pdfcode;
             }
         }
 
         //show share file
 
-        ShareFile(dowloadLink, filename);
+        ShareFile(dowloadLink, filename, sharePdfKey);
+    }
+
+    //--------------------------------------------------------on link Button function
+    public void OnLinkPDFSharableButtonPressed(string groupid)
+    {
+        //fetch link from list
+        string filename = "";
+        string sharePdfKey = "";
+        foreach (HomePageData g in homepagedata)
+        {
+            if (g.GroupId == groupid)
+            {
+                dowloadLink = g.DownloadLink;
+                filename = g.FileName;
+                sharePdfKey = g.Pdfcode;
+            }
+        }
+
+        //show share file
+        //TODO on Link button pressed update share link to 1 and show msg pop up next time update to 0
+        
     }
 
     //----------------------------------------------------------On Download button function
@@ -221,16 +248,55 @@ public class MainController : MonoBehaviour
     public GameObject SharePannel;
     public Text FileNameText;
     public InputField shareinputfield;
-    void ShareFile(string link,string filename)
+    public InputField shareKeyInputField;
+
+    void ShareFile(string link,string filename, string sharekey)
     {
         FileNameText.text = filename;
         SharePannel.SetActive(true);
         shareinputfield.text = link;
+        shareKeyInputField.text = sharekey;
     }
 
     public void OnCloseShareButtonPressed()
     {
         SharePannel.SetActive(false);
+    }
+
+    #endregion
+
+    #region Add, Attach PDF
+
+    [Header("Attach PDF")]
+    public InputField KeyCodeInputField;
+    public Text ErrorTextAttachPDF;
+
+    void OnAddOrAttachPDFButtonPressed()
+    {
+        string code=KeyCodeInputField.text;
+        if (code != null && code != "")
+        {
+            StartCoroutine(AddAttachedPDF(code));
+        }
+        else
+        {
+            ErrorTextAttachPDF.text = "Error : enter pdf code";
+        }
+    }
+
+    IEnumerator AddAttachedPDF(string pdfcode)
+    {
+        WWWForm form1 = new WWWForm();
+        form1.AddField("pdfcode", pdfcode);
+        WWW www = new WWW(GetAllPdfUrl, form1);
+        yield return www;
+        print(www.text);
+        optionBox.Clear();
+        if (www.text.Contains("ID"))
+        {
+
+        }
+
     }
 
     #endregion
