@@ -13,6 +13,7 @@ public class saveload : MonoBehaviour
 
 
     public static string currentgroupId = "";
+    public static string havePermission = "";
 
     public static void Save()
     {

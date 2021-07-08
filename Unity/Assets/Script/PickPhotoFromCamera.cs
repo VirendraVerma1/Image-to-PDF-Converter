@@ -17,6 +17,10 @@ public class PickPhotoFromCamera : MonoBehaviour
     private string DeleteIamgeFromImageIdUrl = "https://datacontainernew.000webhostapp.com/DSM/ondeleteimagefromphone.php";
     private string RemoveImageFromServerURL = "";
 
+    [Header("Common Content")]
+    public GameObject MoveButton;
+    public GameObject PickFromCameraButton;
+    public GameObject PickFromGalleryButton;
 
     private string groupId = "";
     private string imageId="";
@@ -61,6 +65,21 @@ public class PickPhotoFromCamera : MonoBehaviour
         {
             //load and show things
             groupId = saveload.currentgroupId;
+
+            if(saveload.havePermission!="1")
+            {
+                MoveButton.SetActive(true);
+                PickFromCameraButton.SetActive(true);
+                PickFromGalleryButton.SetActive(true);
+            }
+            else
+            {
+                MoveButton.SetActive(false);
+                PickFromCameraButton.SetActive(false);
+                PickFromGalleryButton.SetActive(false);
+            }
+
+
             StartCoroutine(GetAllPhotosFromServer());
 
         }
