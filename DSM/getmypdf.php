@@ -14,9 +14,13 @@
    
      if($data['UserID']==$id)
      {
-             echo "UserID:".$data['UserID']."|FileName:".$data['FileName'].
-             "|Date:".$data['Date']."|GroupID:".$data['GroupID']."|PDFCode:"
-             .$data['PDFCode'].";";
+             echo "UserID:".$data['UserID'].
+             "|FileName:".$data['FileName'].
+             "|Date:".$data['Date'].
+             "|GroupID:".$data['GroupID'].
+             "|Permission:".$data['Permission'].
+             "|IsSharable:".$data['IsSharable'].
+             "|PDFCode:".$data['PDFCode'].";";
      
      }
      

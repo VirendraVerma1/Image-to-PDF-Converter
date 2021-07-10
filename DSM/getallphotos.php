@@ -4,21 +4,18 @@
  $userid=$_POST['id'];
  $groupid=$_POST['groupid'];
  
- $sql="Select * from DMSimagedata where UserID='$userid' and GroupID='$groupid' ORDER BY ImageOrder DESC";
+ $sql="Select * from DMSimagedata where UserID='$userid' and GroupID='$groupid'";
  $run=mysqli_query($con,$sql);
 
- if(mysqli_num_rows($run) > 0)
+ if($run)
  {
    
-   while($data=mysqli_fetch_assoc($run))
-   {
+   $data=mysqli_fetch_assoc($run);
+   //echo "ImageID:".$data['ImageID']."|FileName:".$data['FileName'].";";
+     
+     
+     
    
-     
-       echo "ImageID:".$data['ImageID']."|FileName:".$data['FileName'].";";
-     
-     
-     
-   }
   }
   $con->close(); 
 ?>

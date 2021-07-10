@@ -23,11 +23,13 @@
         if(!is_dir("Merged/".$useriddirectory)){
             //Directory does not exist, so lets create it.
             mkdir("Merged/".$useriddirectory, 0755);
-                    if(!is_dir("Merged/".$useriddirectory."/".$groupiddirectory)){
+                   
+        }
+         if(!is_dir("Merged/".$useriddirectory."/".$groupiddirectory)){
                     //Directory does not exist, so lets create it.
                     mkdir("Merged/".$useriddirectory."/".$groupiddirectory, 0755);
+                    echo "Maded";
                 }
-        }
         
          $folder="Merged/".$useriddirectory."/".$groupiddirectory."/";
          

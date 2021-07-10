@@ -49,7 +49,7 @@
                                    $filename="file";
                                    $pdfcode=$userid."".$groupid;//TODO generate unique number
                                    $process=1;
-                                   $sql="INSERT INTO DMSdata(UserID,GroupID,FileName,Date,PDFCode,Process) VALUES('$userid','$groupid','$filename','$date','$pdfcode','$process')";
+                                   $sql="INSERT INTO DMSdata(UserID,GroupID,FileName,Date,PDFCode,Process,Permission,Share) VALUES('$userid','$groupid','$filename','$date','$pdfcode','$process',3,0)";
                                   mysqli_query($con,$sql);
                                   echo "Inserted to data";
                                }
