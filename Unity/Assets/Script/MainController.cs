@@ -90,6 +90,7 @@ public class MainController : MonoBehaviour
         WWW www = new WWW(GetAllPdfUrl, form1);
         yield return www;
         print(www.text);
+        print(GetAllPdfUrl);
         optionBox.Clear();
         if (www.text.Contains("ID"))
         {
