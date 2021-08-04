@@ -8,6 +8,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class saveload : MonoBehaviour
 {
+
+    public static string mainServerLink = "";
+    public static string logInServerLink = "";
+    public static string signupServerLink = "";
+
     public static string accountID = "";
     public static string accountName = "";
 
