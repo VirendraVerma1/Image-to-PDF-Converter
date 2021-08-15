@@ -27537,12 +27537,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardStack2D_Start_mA0B73F62CF5D373ED2F03
 		V_1 = L_6;
 		float L_7;
 		L_7 = Rect_get_width_m4A0500D95CA84917787A8E90D26E66D49DFA90EF((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_1), /*hidden argument*/NULL);
-		V_0 = ((int32_t)((int32_t)L_7));
+		V_0 = il2cpp_codegen_cast_double_to_int<int32_t>(L_7);
 		// usedCardXPos = (int)(Screen.width * 0.5f + cardWidth);
 		int32_t L_8;
 		L_8 = Screen_get_width_m52188F76E8AAF57BE373018CB14083BB74C43C1C(/*hidden argument*/NULL);
 		int32_t L_9 = V_0;
-		__this->set_usedCardXPos_8(((int32_t)((int32_t)((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)((float)((float)L_8)), (float)(0.5f))), (float)((float)((float)L_9)))))));
+		__this->set_usedCardXPos_8(il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_multiply((float)((float)((float)L_8)), (float)(0.5f))), (float)((float)((float)L_9))))));
 	}
 
 IL_004b:
@@ -30363,7 +30363,7 @@ IL_000f:
 		float L_9 = L_8->get_y_1();
 		NullCheck(L_5);
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_10;
-		L_10 = Texture2D_GetPixel_m50474A401DE4CB3B567F1695546DF1D2C610A022(L_5, ((int32_t)((int32_t)L_7)), ((int32_t)((int32_t)L_9)), /*hidden argument*/NULL);
+		L_10 = Texture2D_GetPixel_m50474A401DE4CB3B567F1695546DF1D2C610A022(L_5, il2cpp_codegen_cast_double_to_int<int32_t>(L_7), il2cpp_codegen_cast_double_to_int<int32_t>(L_9), /*hidden argument*/NULL);
 		__this->set_color_10(L_10);
 		// HandleSamplerColoring();
 		VirtActionInvoker0::Invoke(10 /* System.Void UnityEngine.UI.Extensions.ColorPicker.ColorSampler::HandleSamplerColoring() */, __this);

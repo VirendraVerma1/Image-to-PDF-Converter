@@ -122,6 +122,7 @@ public class PickPhotoFromCamera : MonoBehaviour
 
                 string imageUrl = "https://datacontainernew.000webhostapp.com/DSM/upload/" + photopath;
 
+                print("path="+imageUrl);
                 GameObject go = Instantiate(ImageGO);
 
                 go.transform.SetParent(ImagePlace.transform);
@@ -166,6 +167,7 @@ public class PickPhotoFromCamera : MonoBehaviour
                 break;
             }
         }
+        print("hello world");
     }
 
     public void OnCloseButtonFullScreenImage()

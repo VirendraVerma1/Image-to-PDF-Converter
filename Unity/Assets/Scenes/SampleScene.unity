@@ -7303,7 +7303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1120604406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11224,6 +11224,7 @@ MonoBehaviour:
   LoginEmailInputField: {fileID: 634116976}
   LoginPasswordInputField: {fileID: 1217285399}
   LogInErrorText: {fileID: 937773388}
+  SignUpNameInputField: {fileID: 0}
   SignUpEmailInputField: {fileID: 1959834088}
   SignUpPasswordInputField: {fileID: 1265644986}
   SignUpErrorText: {fileID: 673542187}
@@ -12822,7 +12823,7 @@ PrefabInstance:
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
@@ -12832,12 +12833,12 @@ PrefabInstance:
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
@@ -12882,12 +12883,12 @@ PrefabInstance:
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 531.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -285
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814941320934246977, guid: 9c81969c0456a964096a93c7463e4f45,
         type: 3}

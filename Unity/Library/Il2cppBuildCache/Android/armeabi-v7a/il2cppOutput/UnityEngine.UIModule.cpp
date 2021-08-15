@@ -1269,6 +1269,24 @@ public:
 };
 
 
+// UnityEngine.AdditionalCanvasShaderChannels
+struct AdditionalCanvasShaderChannels_t72A9ACBEE2E5AB5834D5F978421028757954396C 
+{
+public:
+	// System.Int32 UnityEngine.AdditionalCanvasShaderChannels::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(AdditionalCanvasShaderChannels_t72A9ACBEE2E5AB5834D5F978421028757954396C, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+
 // System.Delegate
 struct Delegate_t  : public RuntimeObject
 {
@@ -2030,6 +2048,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m57495F692C6CE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void UnityEngine.Canvas::add_preWillRenderCanvases(UnityEngine.Canvas/WillRenderCanvases)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Canvas_add_preWillRenderCanvases_m79EB92DD9B20090694EBE80E44B9DD13DC1F0E34 (WillRenderCanvases_t459621B4F3FA2571DE0ED6B4DEF0752F2E9EE958 * ___value0, const RuntimeMethod* method)
 {
@@ -2355,6 +2381,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Canvas_set_sortingLayerID_m3BE132868D12C
 	static Canvas_set_sortingLayerID_m3BE132868D12C0DEA8EF5A45842948DBFACF6C6D_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Canvas_set_sortingLayerID_m3BE132868D12C0DEA8EF5A45842948DBFACF6C6D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Canvas::set_sortingLayerID(System.Int32)");
+	_il2cpp_icall_func(__this, ___value0);
+}
+// UnityEngine.AdditionalCanvasShaderChannels UnityEngine.Canvas::get_additionalShaderChannels()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Canvas_get_additionalShaderChannels_mCAA1006118961EDC76A8A79B084D14768A42F206 (Canvas_t2B7E56B7BDC287962E092755372E214ACB6393EA * __this, const RuntimeMethod* method)
+{
+	typedef int32_t (*Canvas_get_additionalShaderChannels_mCAA1006118961EDC76A8A79B084D14768A42F206_ftn) (Canvas_t2B7E56B7BDC287962E092755372E214ACB6393EA *);
+	static Canvas_get_additionalShaderChannels_mCAA1006118961EDC76A8A79B084D14768A42F206_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Canvas_get_additionalShaderChannels_mCAA1006118961EDC76A8A79B084D14768A42F206_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Canvas::get_additionalShaderChannels()");
+	int32_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
+}
+// System.Void UnityEngine.Canvas::set_additionalShaderChannels(UnityEngine.AdditionalCanvasShaderChannels)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Canvas_set_additionalShaderChannels_m857104DC8EA363A2E470CD3B873C60483135C4BD (Canvas_t2B7E56B7BDC287962E092755372E214ACB6393EA * __this, int32_t ___value0, const RuntimeMethod* method)
+{
+	typedef void (*Canvas_set_additionalShaderChannels_m857104DC8EA363A2E470CD3B873C60483135C4BD_ftn) (Canvas_t2B7E56B7BDC287962E092755372E214ACB6393EA *, int32_t);
+	static Canvas_set_additionalShaderChannels_m857104DC8EA363A2E470CD3B873C60483135C4BD_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Canvas_set_additionalShaderChannels_m857104DC8EA363A2E470CD3B873C60483135C4BD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Canvas::set_additionalShaderChannels(UnityEngine.AdditionalCanvasShaderChannels)");
 	_il2cpp_icall_func(__this, ___value0);
 }
 // UnityEngine.Canvas UnityEngine.Canvas::get_rootCanvas()
